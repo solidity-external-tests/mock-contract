@@ -103,7 +103,7 @@ contract MockContract is MockInterface {
 	uint invocations;
 	uint resetCount;
 
-	constructor() public {
+	constructor() {
 		calldataMocks[MOCKS_LIST_START] = MOCKS_LIST_END;
 		methodIdMocks[SENTINEL_ANY_MOCKS] = SENTINEL_ANY_MOCKS;
 	}

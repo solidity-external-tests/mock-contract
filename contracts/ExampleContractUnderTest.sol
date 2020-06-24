@@ -5,7 +5,7 @@ import './ComplexInterface.sol';
 contract ExampleContractUnderTest {
     ComplexInterface complexInterface;
   
-    constructor(address _complexInterface) public {
+    constructor(address _complexInterface) {
         complexInterface = ComplexInterface(_complexInterface);
     }
    
