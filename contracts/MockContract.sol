@@ -142,7 +142,7 @@ contract MockContract is MockInterface {
 	}
 
 	function givenAnyReturnAddress(address response) external override {
-		_givenAnyReturn(uintToBytes(uint(response)));
+		_givenAnyReturn(uintToBytes(uint(uint160(response))));
 	}
 
 	function givenAnyRevert() external override {
@@ -179,7 +179,7 @@ contract MockContract is MockInterface {
 	}
 
 	function givenCalldataReturnAddress(bytes calldata call, address response) external override {
-		_givenCalldataReturn(call, uintToBytes(uint(response)));
+		_givenCalldataReturn(call, uintToBytes(uint(uint160(response))));
 	}
 
 	function _givenMethodReturn(bytes memory call, bytes memory response) private {
@@ -203,7 +203,7 @@ contract MockContract is MockInterface {
 	}
 
 	function givenMethodReturnAddress(bytes calldata call, address response) external override {
-		_givenMethodReturn(call, uintToBytes(uint(response)));
+		_givenMethodReturn(call, uintToBytes(uint(uint160(response))));
 	}
 
 	function givenCalldataRevert(bytes calldata call) external override {
